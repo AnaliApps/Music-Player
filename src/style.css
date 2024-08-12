@@ -1,0 +1,50 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: arial;
+    font-size: 16px;
+    margin: 0;
+    background: #fff;
+    min-height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+button{
+    padding: 10px 25px;
+    font-size: 22px;
+    line-height:40px;
+    min-width: 150px;
+    text-align: center;
+    cursor: pointer;
+    background: linear-gradient(to right bottom, #273c75,#079992);
+    color: white;
+    border-radius: 5px;
+    border: 0px;
+    height: 60px;
+}
+.progress_bar{
+    height: 5px;
+    width: 70vw;
+    background-color: #aaa;
+    margin-top: 30px;
+}
+.progressed{
+    height: 5px;
+    width: 50%;
+    background-color: #f80;
+    transition: all 1s;
+}
+.volumeOfPlayer{
+    height: 5px;
+    width: 50px;
+    background-color: #aaa;
+    margin-top: 10px;
+}
+.setVolume{
+    height: 5px;
+    width: 50%;
+    background-color: #f80;
+    transition: all 1s;
+}
