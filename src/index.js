@@ -1,5 +1,6 @@
 import createPlayer from "./audioPlayer"
 import './style.css'
+(function (){
 document.body.appendChild(createPlayer())
 let audio = document.querySelector("#audio");
 let playpause = document.querySelector("#playpause");
@@ -11,7 +12,6 @@ let volumeOfPlayer = document.querySelector('.volumeOfPlayer')
 let setVolume = document.querySelector('.setVolume')
 let showVolume = document.querySelector('.showVolume')
 let count = 0;
-// let audioFile = new Audio('../media/audio.mp3')
 function playPause(){
     if(count == 0){
         count = 1;
@@ -56,3 +56,5 @@ volumeOfPlayer.addEventListener('click',(e)=>{
     setVolume.style.width = (audio.volume * 100)+"%";
     showVolume.innerHTML = `<span>${(Math.floor(audio.volume * 100))+"%"}</span>`
 })
+})()
+
