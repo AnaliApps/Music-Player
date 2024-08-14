@@ -3,48 +3,179 @@
 }
 body{
     font-family: arial;
-    font-size: 16px;
-    margin: 0;
-    background: #fff;
-    min-height: 100vh;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+    background-color: pink;
 }
-button{
-    padding: 10px 25px;
-    font-size: 22px;
-    line-height:40px;
-    min-width: 150px;
-    text-align: center;
-    cursor: pointer;
-    background: linear-gradient(to right bottom, #273c75,#079992);
-    color: white;
-    border-radius: 5px;
-    border: 0px;
-    height: 60px;
+.player{
+    width: 95vw;
+    overflow: hidden;
+    margin: 5px;
+    position: relative;
+}
+#playerWrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 98vh;
+}
+#newIcon{
+    border-radius: 50%;
+}
+#iconDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#allControls{
+    margin: 20px auto;
+}
+#divBtns{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 35px;
+}
+.currentPos{
+    padding: 0px 0px 20px 0px;
+}
+.currentPos>span{
+    font-weight: bolder;
+    font-size: 25px;
+}
+#next,#playpause,#previous{
+    width: 40px;
+    height: 40px;
+    padding: 5px;
+    font-size: 20px;
+    border-radius: 50%;
+    border: none;
+    color: red;
+}
+#next:hover,#playpause:hover,#previous:hover{
+    background-color: red;
+    color: #fff;
+    transform: scale(1.2);
+    transition: all ease-in 0.1s;
+}
+#progressWrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 .progress_bar{
     height: 5px;
-    width: 70vw;
+    width: 60vw;
     background-color: #aaa;
-    margin-top: 30px;
+    margin-right: 10px;
 }
 .progressed{
     height: 5px;
     width: 50%;
-    background-color: #f80;
+    background-color: rgb(255, 0, 0);
     transition: all 1s;
 }
 .volumeOfPlayer{
     height: 5px;
-    width: 50px;
+    width: 10vw;
     background-color: #aaa;
-    margin-top: 10px;
+
 }
 .setVolume{
     height: 5px;
     width: 50%;
-    background-color: #f80;
+    background-color: red;
     transition: all 1s;
 }
+#playlist{
+    display: none;
+    transition: all width 1s;
+    background: #000;
+    width: 100%;
+    position:absolute;
+    color: #fff;
+}
+.container{
+    display: inline-block;
+    cursor: pointer;
+}
+.bar1,.bar2,.bar3{
+    width: 35px;
+    height: 5px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+.change .bar1{
+    transform: translate(0,11px) rotate(-45deg);
+}
+.change .bar2{
+    opacity: 0;
+}
+.change .bar1{
+    transform: translate(0,-11px) rotate(45deg);
+}
+ @media only screen and  (max-width:768px){
+    .player{
+        width: 95vw;
+        overflow: hidden;
+        margin: 5px;
+    }
+    #newIcon{
+        width: 350px;
+        height: 350px;
+    }
+    h1,.artistName,.currentPos>span{
+        font-size: 40px;
+    }
+    #next,#playpause,#previous{
+        width: 100px;
+        height: 100px;
+        padding: 5px;
+        font-size: 40px;
+        border-radius: 50%;
+        border: none;
+        color: red;
+    }
+    #next:hover,#playpause:hover,#previous:hover{
+        background-color: red;
+        color: #fff;
+        transform: scale(1.2);
+        transition: all ease-in 0.1s;
+    }
+    .progress_bar,.progressed,.volumeOfPlayer,.setVolume{
+        height: 7px;
+    }
+    
+ }
+  @media only screen and  (max-width:1024px){
+    .player{
+        width: 95vw;
+        overflow: hidden;
+        margin: 5px;
+    }
+    #newIcon{
+        width: 100px;
+        height: 100px;
+    }
+    h1,.artistName,.currentPos>span{
+        font-size: 20px;
+    }
+    #next,#playpause,#previous{
+        width: 50px;
+        height: 50px;
+        padding: 5px;
+        font-size: 25px;
+        border-radius: 50%;
+        border: none;
+        color: red;
+    }
+    #next:hover,#playpause:hover,#previous:hover{
+        background-color: red;
+        color: #fff;
+        transform: scale(1.2);
+        transition: all ease-in 0.1s;
+    }
+    
+ } 
+ 
