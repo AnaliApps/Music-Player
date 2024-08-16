@@ -3,44 +3,10 @@ export default function createPlayList(){
     let playListDiv = document.createElement('div');
     playListDiv.setAttribute('id','playlist')
     let playListWrapper = document.createElement('div');
+    playListWrapper.setAttribute('class','playListWrapper')
     playListWrapper.innerHTML=`
-        <ul>
-        <li class="song">
-            <span>Harry 1</span>
-            <audio>
-                <source src="../public/media/audio.mp3" type="audio/mpeg">
-            </audio>
-        </li>
-        <li class="song">
-            <span>Harry 2</span>
-            <audio>
-                <source src="../public/media/audio.mp3" type="audio/mpeg">
-            </audio>
-        </li>
-        <li class="song">
-            <span>Harry 3</span>
-            <audio>
-                <source src="../public/media/audio.mp3" type="audio/mpeg">
-            </audio>
-        </li>
-        <li class="song">
-            <span>Harry 4</span>
-            <audio>
-                <source src="../public/media/audio.mp3" type="audio/mpeg">
-            </audio>
-        </li>
-        <li class="song">
-            <span>Harry 5</span>
-            <audio>
-                <source src="../public/media/audio.mp3" type="audio/mpeg">
-            </audio>
-        </li>
-        <li class="song">
-            <span>Harry 6</span>
-            <audio>
-                <source src="../public/media/audio.mp3" type="audio/mpeg">
-            </audio>
-        </li>
+        <ul id="songs">
+        
         </ul>
     `
     playListDiv.appendChild(playListWrapper)

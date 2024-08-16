@@ -1,3 +1,4 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
 *{
     box-sizing: border-box;
 }
@@ -30,12 +31,6 @@ body{
 #allControls{
     margin: 20px auto;
 }
-#divBtns{
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    padding: 35px;
-}
 .currentPos{
     padding: 0px 0px 20px 0px;
 }
@@ -43,20 +38,29 @@ body{
     font-weight: bolder;
     font-size: 25px;
 }
-#next,#playpause,#previous{
-    width: 40px;
-    height: 40px;
-    padding: 5px;
-    font-size: 20px;
-    border-radius: 50%;
-    border: none;
-    color: red;
+#divBtns{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
 }
-#next:hover,#playpause:hover,#previous:hover{
-    background-color: red;
+#divBtns div{
+    width: 60px;
+    height: 60px;
+    margin: 20px;
+    background-color: #fff;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: #f53192;
+    box-shadow: 0 10px 20px rgba(255,26,26,0.22);
+    cursor: pointer;
+}
+#divBtns div:nth-child(2){
+    transform: scale(1.5);
+    background: #f53192;
     color: #fff;
-    transform: scale(1.2);
-    transition: all ease-in 0.1s;
 }
 #progressWrapper{
     display: flex;
@@ -66,35 +70,81 @@ body{
 .progress_bar{
     height: 5px;
     width: 60vw;
-    background-color: #aaa;
+    background-color: #fff;
     margin-right: 10px;
+    border-radius: 4px;
 }
 .progressed{
     height: 5px;
     width: 50%;
-    background-color: rgb(255, 0, 0);
+    background-color: #f53192;
     transition: all 1s;
 }
 .volumeOfPlayer{
     height: 5px;
     width: 10vw;
+    background-color: #fff;
+    border-radius: 4px;
+}
+.volume_icon{
+    margin: 10px;
+    color: #f53192;
+    background-color: #fff;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    transition: all ease-in-out 1s;
+}
+.volume_icon:hover{
+    transform: scale(1.1);
     background-color: #aaa;
-
 }
 .setVolume{
     height: 5px;
     width: 50%;
-    background-color: red;
+    background-color: #f53192;
     transition: all 1s;
+}
+.playListWrapper > ul{
+    list-style: none;
+    margin: 10px;
+}
+#details{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.song{
+    background-color: #aaa;
+    color:black;
+    padding:10px 0px 10px 2px;
+    border-bottom: 1px solid black;
+    border-radius: 5px;
+}
+.song:hover{
+    transform: scale(1.01);
+    background-color: #fff;
+    cursor: pointer;
 }
 #playlist{
     display: none;
-    transition: all width 1s;
-    background: #000;
+    animation: fadeIn 3s;
+    background: #f53192;
     width: 100%;
+    height: 100%;
     position:absolute;
     color: #fff;
+    border-radius: 5px;
 }
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }  
 .container{
     display: inline-block;
     cursor: pointer;
@@ -128,21 +178,6 @@ body{
     h1,.artistName,.currentPos>span{
         font-size: 40px;
     }
-    #next,#playpause,#previous{
-        width: 100px;
-        height: 100px;
-        padding: 5px;
-        font-size: 40px;
-        border-radius: 50%;
-        border: none;
-        color: red;
-    }
-    #next:hover,#playpause:hover,#previous:hover{
-        background-color: red;
-        color: #fff;
-        transform: scale(1.2);
-        transition: all ease-in 0.1s;
-    }
     .progress_bar,.progressed,.volumeOfPlayer,.setVolume{
         height: 7px;
     }
@@ -160,21 +195,6 @@ body{
     }
     h1,.artistName,.currentPos>span{
         font-size: 20px;
-    }
-    #next,#playpause,#previous{
-        width: 50px;
-        height: 50px;
-        padding: 5px;
-        font-size: 25px;
-        border-radius: 50%;
-        border: none;
-        color: red;
-    }
-    #next:hover,#playpause:hover,#previous:hover{
-        background-color: red;
-        color: #fff;
-        transform: scale(1.2);
-        transition: all ease-in 0.1s;
     }
     
  } 
