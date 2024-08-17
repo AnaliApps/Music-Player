@@ -110,7 +110,7 @@ body{
 }
 .playListWrapper > ul{
     list-style: none;
-    margin: 10px;
+    /* margin: 10px; */
 }
 #details{
     display: flex;
@@ -128,7 +128,8 @@ body{
 }
 .song:hover{
     transform: scale(1.01);
-    background-color: #fff;
+    background-color: black;
+    color: #fff;
     cursor: pointer;
 }
 #playlist{
@@ -136,10 +137,11 @@ body{
     animation: fadeIn 3s;
     background: #f53192;
     width: 100%;
-    height: 100%;
+     height: 100%; 
     position:absolute;
     color: #fff;
     border-radius: 5px;
+    overflow-y:auto; 
 }
 @keyframes fadeIn {
     0% { opacity: 0; }
@@ -165,6 +167,9 @@ body{
 .change .bar1{
     transform: translate(0,-11px) rotate(45deg);
 }
+/* h1,.artistName,.currentPos>span{
+    font-size: 18px;
+} */
  @media only screen and  (max-width:768px){
     .player{
         width: 95vw;
@@ -175,9 +180,9 @@ body{
         width: 350px;
         height: 350px;
     }
-    h1,.artistName,.currentPos>span{
+    /* h1,.artistName,.currentPos>span{
         font-size: 40px;
-    }
+    } */
     .progress_bar,.progressed,.volumeOfPlayer,.setVolume{
         height: 7px;
     }
@@ -193,9 +198,9 @@ body{
         width: 100px;
         height: 100px;
     }
-    h1,.artistName,.currentPos>span{
+    /* h1,.artistName,.currentPos>span{
         font-size: 20px;
-    }
+    } */
     
  } 
  

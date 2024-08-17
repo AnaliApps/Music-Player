@@ -73,7 +73,7 @@ allSongs.forEach((song)=>{
     li.innerHTML=`
         <div class="song">
             <span>${song.id}</span>
-            <h2>${song.title}</h2>
+            <h4>${song.title}</h4>
             <p>${song.src}</p>
         </div>
     `
@@ -82,10 +82,10 @@ allSongs.forEach((song)=>{
 let displayedSongs = document.querySelectorAll(".song")
 console.log(displayedSongs)
 displayedSongs.forEach((item)=>{
-    let id = item.querySelector('span').textContent
-    let src = item.querySelector('p').textContent
     item.addEventListener('click',()=>{
-        console.log(id,src)
+        let id = item.querySelector('span').textContent
+        let src = item.querySelector('p').textContent
+        console.log("id",id,src)
         audio.src=src
         playPause(id)
         closeMenu()
@@ -94,6 +94,7 @@ displayedSongs.forEach((item)=>{
         if(audio.play()){
              ctrIcon.classList.remove('fa-play')
              ctrIcon.classList.add('fa-pause')
+             audio.play()
         }else{
             audio.pause()
             ctrIcon.classList.add('fa-play')
@@ -114,7 +115,7 @@ function playSong(itemId){
     if(songLibrary.currentSong ===null || songLibrary.currentSong.id !== selectedSong.id){
         audio.currentTime=0;
     }else{
-        audio.currentTime = songLibrary.currentSong.currentTime;
+        audio.currentTime = songLibrary.songCurrentTime;
     }
     songLibrary.currentSong = selectedSong;
     ctrIcon.classList.remove('fa-play')
@@ -199,15 +200,17 @@ function playPause(itemId){
     if(ctrIcon.classList.contains('fa-play')){
         if(songLibrary?.currentSong === null)
         {
-            itemId = songLibrary.allLibrarySongs[0].id
-            playSong(itemId)
+            // itemId = songLibrary.allLibrarySongs[0].id
+            playSong(songLibrary.allLibrarySongs[0].id)
         }else{
             itemId = songLibrary?.currentSong.id
-            console.log(itemId)
+            console.log(songLibrary?.currentSong)
+            console.log("itemId",itemId)
             playSong(itemId)
         }
 
     }else{
+        // let currentAudio = songLibrary.currentSong.src
         pauseSong()
     }
 }
